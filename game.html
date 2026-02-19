@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuddle Bunch – Mina nallor 🧸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="game-page">
+
+  <div class="stars" id="stars"></div>
+
+  <!-- HEADER -->
+  <header class="game-header">
+    <div class="header-left">
+      <button class="dark-toggle" id="darkToggle" onclick="toggleDark()" title="Byt tema">
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+      </button>
+      <div class="header-logo" id="headerLogo"></div>
+      <h1 class="header-title">Cuddle Bunch</h1>
+    </div>
+    <a href="index.html" class="btn-adopt-more">
+      <span>+ Adoptera fler</span>
+    </a>
+  </header>
+
+  <!-- MAIN GRID -->
+  <main class="game-main">
+    <div id="emptyState" class="empty-state" style="display:none">
+      <div class="empty-bear" id="emptyBear"></div>
+      <p class="empty-text">Du har inga nallor än…</p>
+      <a href="index.html" class="adopt-btn-inline">Adoptera din första! 🎀</a>
+    </div>
+    <div class="animal-grid" id="animalGrid"></div>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal-backdrop" onclick="handleBackdropClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+
+      <!-- SCENE AREA -->
+      <div id="modalScene" class="modal-scene"></div>
+
+      <!-- INFO BAR -->
+      <div class="modal-info">
+        <h2 id="modalName" class="modal-name"></h2>
+        <div class="modal-energy-row">
+          <span class="energy-icon">⚡</span>
+          <div class="energy-track">
+            <div id="modalEnergyFill" class="energy-fill"></div>
+          </div>
+          <span id="modalEnergyNum" class="energy-num">100</span>
+        </div>
+        <p id="modalStatus" class="modal-status"></p>
+      </div>
+
+      <!-- TABS (when awake) -->
+      <div id="modalTabs" class="modal-tabs">
+        <button class="tab-btn" data-tab="feed"  onclick="switchTab('feed')">🍯<span>Mata</span></button>
+        <button class="tab-btn" data-tab="play"  onclick="switchTab('play')">🤣<span>Killa</span></button>
+        <button class="tab-btn" data-tab="tv"    onclick="switchTab('tv')">📺<span>TV</span></button>
+        <button class="tab-btn" data-tab="sleep" onclick="switchTab('sleep')">🛏️<span>Säng</span></button>
+      </div>
+
+      <!-- WAKE (when sleeping) -->
+      <div id="wakeDiv" class="wake-div" style="display:none">
+        <button class="wake-btn" onclick="doWake()">☀️ Väck upp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="animals.js"></script>
+  <script src="interactions.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
