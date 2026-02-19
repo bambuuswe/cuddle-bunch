@@ -22,9 +22,7 @@
       <div class="header-logo" id="headerLogo"></div>
       <h1 class="header-title">Cuddle Bunch</h1>
     </div>
-    <a href="index.html" class="btn-adopt-more">
-      <span>+ Adoptera fler</span>
-    </a>
+    <a href="index.html" class="btn-adopt-more"><span>+ Adoptera fler</span></a>
   </header>
 
   <!-- MAIN GRID -->
@@ -42,31 +40,46 @@
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal()">✕</button>
 
-      <!-- SCENE AREA -->
+      <!-- SCENE -->
       <div id="modalScene" class="modal-scene"></div>
 
-      <!-- INFO BAR -->
+      <!-- INFO -->
       <div class="modal-info">
-        <h2 id="modalName" class="modal-name"></h2>
-        <div class="modal-energy-row">
-          <span class="energy-icon">⚡</span>
-          <div class="energy-track">
-            <div id="modalEnergyFill" class="energy-fill"></div>
+        <div class="modal-top-row">
+          <h2 id="modalName" class="modal-name"></h2>
+          <div id="modalBond" class="modal-bond"></div>
+        </div>
+        <div id="modalDiary" class="modal-diary"></div>
+        <div class="modal-meters">
+          <div class="meter-row">
+            <span class="meter-icon">⚡</span>
+            <div class="energy-track">
+              <div id="modalEnergyFill" class="energy-fill"></div>
+            </div>
+            <span id="modalEnergyNum" class="energy-num">100</span>
           </div>
-          <span id="modalEnergyNum" class="energy-num">100</span>
+          <div class="meter-row">
+            <span class="meter-icon">🌸</span>
+            <div class="mood-track">
+              <div id="modalMoodFill" class="mood-fill-bar"></div>
+            </div>
+            <span id="modalMoodEmoji" class="mood-emoji">😊</span>
+          </div>
         </div>
         <p id="modalStatus" class="modal-status"></p>
       </div>
 
-      <!-- TABS (when awake) -->
+      <!-- TABS – 6 activities in 3×2 grid -->
       <div id="modalTabs" class="modal-tabs">
         <button class="tab-btn" data-tab="feed"  onclick="switchTab('feed')">🍯<span>Mata</span></button>
-        <button class="tab-btn" data-tab="play"  onclick="switchTab('play')">🤣<span>Killa</span></button>
+        <button class="tab-btn" data-tab="play"  onclick="switchTab('play')">🤣<span>Kila</span></button>
         <button class="tab-btn" data-tab="tv"    onclick="switchTab('tv')">📺<span>TV</span></button>
+        <button class="tab-btn" data-tab="read"  onclick="switchTab('read')">📖<span>Läs</span></button>
+        <button class="tab-btn" data-tab="fika"  onclick="switchTab('fika')">🍵<span>Fika</span></button>
         <button class="tab-btn" data-tab="sleep" onclick="switchTab('sleep')">🛏️<span>Säng</span></button>
       </div>
 
-      <!-- WAKE (when sleeping) -->
+      <!-- WAKE (sleeping only) -->
       <div id="wakeDiv" class="wake-div" style="display:none">
         <button class="wake-btn" onclick="doWake()">☀️ Väck upp</button>
       </div>
